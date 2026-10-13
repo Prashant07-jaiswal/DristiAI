@@ -1,0 +1,420 @@
+/* Dark theme (default) */
+:root {
+  --bg-primary: #0a0f18;
+  --bg-secondary: #131b2c;
+  --bg-panel: #1b263b;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent-cyan: #00f0ff;
+  --accent-blue: #3b82f6;
+  --accent-red: #ef4444;
+  --accent-amber: #f59e0b;
+  --border-color: #2e3c54;
+  --stat-value-color: #fff;
+  --player-name-color: #fff;
+  --brand-title-color: #fff;
+  --btn-hover-shadow: rgba(59, 130, 246, 0.4);
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Light theme */
+:root[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-panel: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent-cyan: #0891b2;
+  --accent-blue: #2563eb;
+  --accent-red: #dc2626;
+  --accent-amber: #d97706;
+  --border-color: #e2e8f0;
+  --stat-value-color: #0f172a;
+  --player-name-color: #0f172a;
+  --brand-title-color: #0f172a;
+  --btn-hover-shadow: rgba(37, 99, 235, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  height: 60px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--brand-title-color);
+  letter-spacing: 0.5px;
+}
+
+.brand-subtitle {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 380px;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Stat Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat-card {
+  background-color: var(--bg-panel);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--stat-value-color);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Key Players List */
+.player-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-panel);
+  padding: 12px 16px;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent-red);
+}
+
+.player-info h4 {
+  font-size: 0.95rem;
+  color: var(--player-name-color);
+  margin-bottom: 4px;
+}
+
+.player-info p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.risk-badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--accent-red);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Graph Container */
+.graph-container {
+  flex: 1;
+  position: relative;
+  background-color: var(--bg-primary);
+}
+
+.empty-state {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--accent-blue);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+  box-shadow: 0 0 15px var(--btn-hover-shadow);
+}
+
+.action-bar {
+  padding: 16px 24px;
+  display: flex;
+  gap: 12px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-blue);
+}
+
+.toggle-track {
+  width: 44px;
+  height: 24px;
+  background: var(--border-color);
+  border-radius: 12px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.toggle-track.active {
+  background: var(--accent-blue);
+}
+
+.toggle-thumb {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-track.active .toggle-thumb {
+  transform: translateX(20px);
+}
+
+.toggle-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Light theme adjustments for specific elements */
+:root[data-theme="light"] .brand-subtitle {
+  background: rgba(8, 145, 178, 0.1);
+  border-color: rgba(8, 145, 178, 0.3);
+  color: var(--accent-cyan);
+}
+
+:root[data-theme="light"] .risk-badge {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+:root[data-theme="light"] .navbar {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+:root[data-theme="light"] .sidebar {
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="light"] .stat-card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="light"] .player-item {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="light"] .btn-primary {
+  color: #fff;
+}
+
+/* ============ VS Code style Tree / Accordion ============ */
+.tree-section {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tree-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  transition: background 0.15s;
+}
+
+.tree-section-header:hover {
+  background: var(--bg-panel);
+}
+
+.tree-chevron {
+  font-size: 0.7rem;
+  width: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.tree-count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  min-width: 18px;
+  text-align: right;
+}
+
+.tree-children {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0 6px;
+}
+
+.tree-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 16px 5px 38px;
+  cursor: pointer;
+  font-size: 0.84rem;
+  color: var(--text-primary);
+  transition: background 0.12s;
+}
+
+.tree-item:hover {
+  background: var(--bg-panel);
+}
+
+.tree-item-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Consolas', 'Menlo', 'Monaco', monospace;
+}
+
+.tree-badge {
+  flex-shrink: 0;
+  padding: 1px 7px;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-family: 'Consolas', 'Menlo', 'Monaco', monospace;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.tree-badge-red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #22c55e;
+}
+
+.tree-badge-amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.tree-empty {
+  padding: 6px 16px 6px 38px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Light theme tree overrides */
+:root[data-theme="light"] .tree-badge-red {
+  background: rgba(220, 38, 38, 0.1);
+  color: #16a34a;
+}
+
+:root[data-theme="light"] .tree-badge-amber {
+  background: rgba(217, 119, 6, 0.1);
+  color: #d97706;
+}
