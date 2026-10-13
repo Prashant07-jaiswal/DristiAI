@@ -187,9 +187,6 @@ Dashboard available at **http://localhost:5173**.
 
 ---
 
-## 👥 Team
-
-**SIH Prototype 189** — Smart India Hackathon
 
 ---
 
