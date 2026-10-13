@@ -1,7 +1,7 @@
 <p align="center">
-  <h1 align="center">🕵️ AI-Powered Criminal Network Analysis & Intelligence System</h1>
+  <h1 align="center">🕵️ DristiAI</h1>
   <p align="center">
-    <strong>SIH Prototype 189</strong> — Graph Intelligence for Law Enforcement
+    <strong></strong> — Graph Intelligence for Law Enforcement
   </p>
   <p align="center">
     <em>Internal SIH Winner — Score: 47.67 / 50</em>
